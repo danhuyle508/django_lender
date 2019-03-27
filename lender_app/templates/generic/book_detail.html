@@ -3,8 +3,9 @@
 {% block title %}Detail{% endblock %}
 
 {% block content %}
+<h2>Book Detail</h2>
 <div class="book_detail">
 <h3>{{ book.title }} ({{ book.status }})</h3>
-<p>{{ book.detail }}</p>
+<p>{{ book.detail }} {{ book.author}} {{ book.year }}</p>
 </div>
 {% endblock content %}
