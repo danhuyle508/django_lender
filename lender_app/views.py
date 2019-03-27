@@ -7,12 +7,11 @@ def book_list_view(request):
     context ={
         'books': books,
     }
-    return render(request, 'books/book_list.html', context)
+    return render(request, 'generic/book_list.html', context)
 
 def book_detail_view(request, pk=None):
     book = get_object_or_404(Book, id=pk)
     context = {
         'book': book,
     }
-
-    return render(request, 'book/book_detail.html', context)
+    return render(request, 'generic/book_detail.html', context)
