@@ -1,4 +1,8 @@
 from django.db import models
+from django.utils import timezone
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Book(models.Model):
@@ -12,7 +16,7 @@ class Book(models.Model):
     ]
 
     status = models.CharField(choices=STATES, default='checked-out', max_length=48)
-    date_added = models.DateTimeField(auto_now_add=True)
+    date_added = models.DateTimeField(default=timezone.now)
     last_borrowed = models.DateTimeField(auto_now=True)
 
     def __repr__(self):
