@@ -4,6 +4,7 @@
 {% block content %}
 <h2>Book list</h2>
 <div class="book_list">
+    <p>You have {{ books|length }} books on record</p>
     {% for book in books %}
     <h3><a href="{% url "book_detail" pk=book.id %}">{{ book.title }} ({{ book.status }})</a></h3>
     {% endfor %}

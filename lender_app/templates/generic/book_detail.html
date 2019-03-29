@@ -1,4 +1,6 @@
 {% extends "generic/base.html" %}
+{% load tz %}
+{% load template_extras %}
 
 {% block title %}Detail{% endblock %}
 
@@ -6,6 +8,10 @@
 <h2>Book Detail</h2>
 <div class="book_detail">
 <h3>{{ book.title }} ({{ book.status }})</h3>
-<p>{{ book.detail }} {{ book.author}} {{ book.year }}</p>
+    <p>Created: {{ book.date_created | get_date_string }}</p>   
+    <p>{{ book.detail }} {{ book.author}} {{ book.year }}</p>
+    {% if book.status == 'complete' %}
+    <p>Completed: {{ book.date_completed | get_date_string }}</p>
+    {% endif %}
 </div>
-{% endblock content %}
+{% endblock content %}  
