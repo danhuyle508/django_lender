@@ -26,7 +26,7 @@ class TestViews():
     def setUp(self):
         self.request = RequestFactory()
 
-        self.user = User.objects.create_user('foo','bar')
+        self.user = User.objects.create_user('dan','le')
         
         Book.objects.create(title='book one', detail='detail one', user=self.user)
         Book.objects.create(title='book two', detail='detail two', user=self.user)

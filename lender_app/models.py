@@ -16,6 +16,7 @@ class Book(models.Model):
     ]
 
     status = models.CharField(choices=STATES, default='checked-out', max_length=48)
+    date_created = models.DateTimeField(default=timezone.now())
     date_added = models.DateTimeField(default=timezone.now)
     last_borrowed = models.DateTimeField(auto_now=True)
 
